@@ -1,23 +1,44 @@
 import json
+import os
 
-numbers = [
-    "02", "03", "04", "05", "06", "07", "09",
-    "31", "33", "34", "21", "27", "11", "30",
-    "28", "14", "20", "38", "26", "15", 
-]
+def create_task_files(pid):
+    output_dir = f"DATA/participant_{pid}/"
+    # Vorlage-Daten
+    template = {
+        "Result Cell understood (1 / 0)": {
+            "explicitly mentioned": 0,
+            "implied understand": 0
+        },
+        "each operation understood (1 point for each)": {
+            "explicitly mentioned": 0,
+            "implied understanding": 0
+        },
+        "each expected operand understood (1 point for each)": {
+            "explicitly mentioned": 0,
+            "implied understanding": 0
+        },
+        "Result Type understood (1.0/0.5/0)": {
+            "explicitly mentioned": 0,
+            "implied understanding": 0
+        },
+        "time taken (sec)": "",
+        "start (of new slide)": "",
+        "timestamp where participant realizes": "",
+        "end of this slide": "",
+        "notes": ""
+    }
 
-content = {
-    "How much experience do you have using spreadsheets?": "",
-    "How much experience do you have using tablets or similar large touchscreens?": "",
-    "How much experience do you have using a digital pen or stylus?": "",
-    "What is the direction of your native language?": "",
-    "What is your age group?": "",
-    "What is your gender?": ""
-}
+    # Ordner erstellen, falls nicht vorhanden
+    os.makedirs(output_dir, exist_ok=True)
 
-for nr in numbers:
-    filename = f"dempgraphics_p{nr}.json"
-    with open(filename, "w", encoding="utf-8") as f:
-        json.dump(content, f, ensure_ascii=False, indent=2)
+    # Dateien erzeugen
+    for tid in range(1, 18):  # 1 bis 17
+        filename = f"task_{pid}_{tid}.json"
+        filepath = os.path.join(output_dir, filename)
 
-print("Fertig: Dateien erstellt.")
+        with open(filepath, "w", encoding="utf-8") as f:
+            json.dump(template, f, indent=2, ensure_ascii=False)
+
+        print(f"Erstellt: {filepath}")
+
+# Beispiel-Aufruf

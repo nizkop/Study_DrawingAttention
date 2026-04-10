@@ -1,0 +1,23 @@
+{
+  "Result Cell understood (1 / 0)": {
+    "explicitly mentioned": 0,
+    "implied understand": 0
+  },
+  "each operation understood (1 point for each)": {
+    "explicitly mentioned": 0,
+    "implied understanding": 0
+  },
+  "each expected operand understood (1 point for each)": {
+    "explicitly mentioned": 0,
+    "implied understanding": 0
+  },
+  "Result Type understood (1.0/0.5/0)": {
+    "explicitly mentioned": 0,
+    "implied understanding": 0
+  },
+  "time taken (sec)": "",
+  "start (of new slide)": "",
+  "timestamp where participant realizes": "",
+  "end of this slide": "",
+  "notes": ""
+}
