@@ -1,1 +1,4 @@
 Warum hat p06 zwei Fragen mehr in Demographics als alle anderen? 
+
+
+F = Formula, V = Video, S = Static -> Kürzel-Interpretation / Gruppen der Teilnehmenden
