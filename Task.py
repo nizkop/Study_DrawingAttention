@@ -19,3 +19,7 @@ class Task(object):
         self.result_type = result_type
         assert max_total >= 0
         self.max_total = max_total
+
+
+    def get_excel_line(self):
+        return 2 + int(self.number)

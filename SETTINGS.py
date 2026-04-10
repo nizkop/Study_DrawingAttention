@@ -1,0 +1,5 @@
+
+
+# DATA_INPUT = "EXCEL"
+DATA_INPUT = "JSON"
+
