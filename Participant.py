@@ -32,10 +32,10 @@ class Participant(object):
         if settings.DATA_INPUT == "JSON":
             with open(self.get_data_directory()+filename, "r", encoding="utf-8") as f:
                 raw_data = json.load(f)
-                p_task = ParticipantTask(p_id=self.id, task_id=task.task_number)
-                p_task.set_raw_data(raw_data)
+                p_task = ParticipantTask(p_id=self.id, task=task)
+                p_task.set_raw_data(raw_data)#, info=f"{self.id}_{task.task_number}")
                 self.add_participant_task(p_task=p_task)
-            print(f"✓ Loaded from JSON: {filename}")
+            # print(f"✓ Loaded from JSON: {filename}")
             return
 
         ########### READ FROM EXCEL FILE #########
@@ -64,10 +64,16 @@ class Participant(object):
                         "implied understanding": ws[f"P{task_line}"].value
                     },
                     "start (of new slide)": str(ws[f"S{task_line}"].value),
-                    "timestamp where participant realizes": str(ws[f"T{task_line}"].value),
-                    "end of this slide": str(ws[f"U{task_line}"].value),
-                    "notes": str(ws[f"V{task_line}"].value)
             }
+            if self.studygroup == STUDYGROUP.V:
+                template["End of video"] = str(ws[f"T{task_line}"].value),
+                template["timestamp where participant realizes"] = str(ws[f"U{task_line}"].value)
+                template["end of this slide"] = str(ws[f"V{task_line}"].value)
+                template["notes"] = str(ws[f"W{task_line}"].value)
+            else:
+                template["timestamp where participant realizes"] = str(ws[f"T{task_line}"].value)
+                template["end of this slide"] = str(ws[f"U{task_line}"].value)
+                template["notes"] = str(ws[f"V{task_line}"].value)
 
             os.makedirs(output_dir, exist_ok=True)
             filepath = os.path.join(output_dir, filename)
@@ -77,7 +83,7 @@ class Participant(object):
 
             print(f"! Updated Data from Excel for: {filepath}")
             p_task = ParticipantTask(p_id=self.id, task=task)
-            p_task.set_raw_data(template)
+            p_task.set_raw_data(template)# info=f"{self.id}_{task.task_number}")
             self.add_participant_task(p_task=p_task)
         return
 
@@ -88,4 +94,10 @@ class Participant(object):
         if p_task.id not in task_ids:
             self.tasks.append(p_task)
 
+    def get_participant_task(self, task_id:int):
+        for i in self.tasks:
+            if i.task_number == task_id:
+                return i
+        print(f"task not found {task_id} in", [i.task_number for i in self.tasks])
+        return None
 
