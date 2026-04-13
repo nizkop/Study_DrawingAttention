@@ -3,13 +3,11 @@ import pandas as pd
 from StudyElements.Participant import Participant
 from HelperFunctions.basic_boxplot import basic_boxplot
 from compact_letter_display import compact_letter_display
-from time_needed_modalities_statistik import within_subjects_anova, post_hoc_within
+from HelperFunctions.statistics.post_hoc_within import post_hoc_within
+from HelperFunctions.statistics.within_subjects_anova import within_subjects_anova
 
 
 def display_DOU(task_ids: list[int], participants: list[Participant]):
-    if participants is None:
-        raise ValueError("Participants list must be provided.")
-
     x_values = []
     y_values = []
     data = []
