@@ -13,5 +13,7 @@ Wäre die TTU dann nicht falsch?
 Zeitangabe per minutes, seconds, milliseconds = value.split(":") ?
 
 
+aggregate funciton for AnovaRM = ? -> mean / median / ?
+
 welche statistische Anaylse:
     Spannend wäre vor allem, ob die beobachteten Unterschiede von DOU und TTU zwischen den drei Darstellungsformen statistisch signifikant sind.

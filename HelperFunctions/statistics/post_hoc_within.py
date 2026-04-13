@@ -48,6 +48,3 @@ def post_hoc_within(data_tbl: pd.DataFrame,
 
     return sig_matrix, list(groups), n_groups
 
-
-
-

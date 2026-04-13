@@ -22,7 +22,7 @@ def display_TTU(task_ids: list[int], participants: list[Participant]):
                     data.append({
                         "id": f"task_{task.task_number}",
                         "group": p.studygroup.value,
-                        "measured_value": task.time_to_understand,
+                        "TTU": task.time_to_understand,
                     })
             else:
                 raise Exception(f"missing task {p.id}_{task.task_number}")
@@ -32,8 +32,8 @@ def display_TTU(task_ids: list[int], participants: list[Participant]):
     fig.savefig("TTU_total.pdf", bbox_inches="tight")
 
     df = pd.DataFrame(data)
-    df_agg, result_total = within_subjects_anova(df=df, print_info=True, try_again=True,
+    df_agg, result_total = within_subjects_anova(df=df, print_info=False, try_again=True, value_col="TTU",
                                                  potential_difference_determining_column="group")
     print(result_total)
-    sig_matrix, groups, n = post_hoc_within(df_agg, group_col="group", value_col="measured_value", subject_col="id")
+    sig_matrix, groups, n = post_hoc_within(df_agg, group_col="group", value_col="TTU", subject_col="id")
     cld_strings_total = compact_letter_display(groups, n, sig_matrix, print_info=True)
