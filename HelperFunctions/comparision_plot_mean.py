@@ -13,4 +13,4 @@ def comparision_plot_mean(x_values:list[float], y_values:list[list[float]],
     ax2.set_ylabel(y_label)
     ax2.grid(True, axis='y', linestyle='--', alpha=0.7)
     fig2.tight_layout()
-    plt.show()
+    # plt.show()

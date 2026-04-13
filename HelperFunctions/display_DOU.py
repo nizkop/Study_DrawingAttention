@@ -1,6 +1,6 @@
 
-from Participant import Participant
-from basic_boxplot import basic_boxplot
+from StudyElements.Participant import Participant
+from HelperFunctions.basic_boxplot import basic_boxplot
 
 def display_DOU(task_ids: list[int], participants: list[Participant]):
     if participants is None:
@@ -21,4 +21,6 @@ def display_DOU(task_ids: list[int], participants: list[Participant]):
 
     fig, ax = basic_boxplot(x_values=x_values, y_values=y_values,
                   y_label="Degree of Understanding [ ]", x_label="Task ID")
+    fig.savefig("DOU_total.pdf", bbox_inches="tight")
+
 

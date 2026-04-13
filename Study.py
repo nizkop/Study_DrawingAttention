@@ -1,8 +1,8 @@
-from Participant import Participant
-from STUDYGROUP import STUDYGROUP
-from Task import Task, RESULTTYPE
-from display_DOU import display_DOU
-from display_TTU import display_TTU
+from StudyElements.Participant import Participant
+from StudyElements.STUDYGROUP import STUDYGROUP
+from StudyElements.Task import Task, RESULTTYPE
+from HelperFunctions.display_DOU import display_DOU
+from HelperFunctions.display_TTU import display_TTU
 
 p01 = Participant(id="p01", studygroup=STUDYGROUP.F)
 p31 = Participant(id="p31", studygroup=STUDYGROUP.F)

@@ -1,6 +1,6 @@
 from datetime import datetime, time, timedelta
 
-from Task import Task
+from StudyElements.Task import Task
 
 
 class ParticipantTask(Task):

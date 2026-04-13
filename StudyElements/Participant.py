@@ -1,6 +1,4 @@
-from Participanttask import ParticipantTask
-from STUDYGROUP import STUDYGROUP
-from Task import Task
+
 
 import SETTINGS as settings
 
@@ -9,6 +7,9 @@ import json
 import os
 from openpyxl import load_workbook
 
+from StudyElements.Participanttask import ParticipantTask
+from StudyElements.STUDYGROUP import STUDYGROUP
+from StudyElements.Task import Task
 
 
 class Participant(object):
