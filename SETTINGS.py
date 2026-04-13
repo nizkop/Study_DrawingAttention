@@ -4,4 +4,4 @@
 DATA_INPUT = "JSON"
 
 
-alpha = 0.01
+alpha = 0.05

@@ -1,6 +1,5 @@
 import pandas as pd
 
-from SETTINGS import alpha
 from StudyElements.Participant import Participant
 from HelperFunctions.basic_boxplot import basic_boxplot
 from compact_letter_display import compact_letter_display
@@ -22,7 +21,7 @@ def display_DOU(task_ids: list[int], participants: list[Participant]):
             if task is not None:
                 y_values[-1].append(task.degree_of_understanding)
                 data.append({
-                    "id": 0,
+                    "id": f"task_{task.task_number}",
                     "group": p.studygroup.value,
                     "measured_value": task.degree_of_understanding,
                 })
@@ -35,14 +34,9 @@ def display_DOU(task_ids: list[int], participants: list[Participant]):
 
 
     df = pd.DataFrame(data)
-    # print(df["taskid"].unique().tolist(), df["value"].unique().tolist(), df["pid"].unique().tolist())
-
-
-    df_agg, result_total = within_subjects_anova(df=df, print_info=True,
+    df_agg, result_total = within_subjects_anova(df=df, print_info=True, try_again=True,
                                                  potential_difference_determining_column="group")
+    print(result_total)
     sig_matrix, groups, n = post_hoc_within(df_agg, group_col="group", value_col="measured_value", subject_col="id")
-
     cld_strings_total = compact_letter_display(groups, n, sig_matrix, print_info=True)
-
-
 

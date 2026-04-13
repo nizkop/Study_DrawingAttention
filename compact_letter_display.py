@@ -39,5 +39,5 @@ def compact_letter_display(groups, n, sig_matrix, print_info:bool=True):
     if print_info:
         print("\nCompact Letter Display:")
         for g in sorted(cld_strings):
-            print(f"{g}: {cld_strings[g]}")
+            print(f"\t{g}: {cld_strings[g]}")
     return cld_strings

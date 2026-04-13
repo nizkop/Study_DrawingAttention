@@ -24,8 +24,8 @@ def within_subjects_anova(df, potential_difference_determining_column:str,
         res = aov.fit()
 
         if print_info:
-            print("\n=== Repeated‑Measures ANOVA ===")
-            print(res)
+            print("\n\t=== Repeated‑Measures ANOVA ===")
+            print("\t", str(res).replace("\n","\n\t"), sep="")
 
         partial_eta_squared = get_partial_ETA_squared(res)
 
@@ -40,7 +40,7 @@ def within_subjects_anova(df, potential_difference_determining_column:str,
             for group_name, median_val in sorted_medians.items():
                 result += f"\n\t  {group_name:10} → {median_val:.3f} s"
         else:
-            result = f"→ kein signifikanter Unterschied (p = {p_val:.4g},, eta = {partial_eta_squared:.4g}))"
+            result = f"→ kein signifikanter Unterschied (p = {p_val:.4g}, eta = {partial_eta_squared:.4g}))"
         return df_agg, result
     except ValueError:
         # Data is unbalanced
