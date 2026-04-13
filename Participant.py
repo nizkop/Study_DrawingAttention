@@ -1,3 +1,4 @@
+from Participanttask import ParticipantTask
 from STUDYGROUP import STUDYGROUP
 from Task import Task
 
@@ -15,7 +16,7 @@ class Participant(object):
     def __init__(self, id:str, studygroup: STUDYGROUP):
         self.id = id
         self.studygroup = studygroup
-        self.raw_data = {}
+        self.tasks = []
 
 
     def get_data_directory(self):
@@ -25,14 +26,15 @@ class Participant(object):
         return self.get_data_directory() + f"demographics_{self.id}.json"
 
     def create_task_files(self, task:Task):
-        if len(self.raw_data) > 0:
-            return
 
-        filename = f"task_{self.id}_{task.number}.json"
+        filename = f"task_{self.id}_{task.task_number}.json"
         ########### USE JSON
         if settings.DATA_INPUT == "JSON":
             with open(self.get_data_directory()+filename, "r", encoding="utf-8") as f:
-                self.raw_data = json.load(f)
+                raw_data = json.load(f)
+                p_task = ParticipantTask(p_id=self.id, task_id=task.task_number)
+                p_task.set_raw_data(raw_data)
+                self.add_participant_task(p_task=p_task)
             print(f"✓ Loaded from JSON: {filename}")
             return
 
@@ -74,7 +76,16 @@ class Participant(object):
                 json.dump(template, f, indent=2, ensure_ascii=False)
 
             print(f"! Updated Data from Excel for: {filepath}")
-            self.raw_data = template
+            p_task = ParticipantTask(p_id=self.id, task=task)
+            p_task.set_raw_data(template)
+            self.add_participant_task(p_task=p_task)
         return
+
+    def add_participant_task(self, p_task:ParticipantTask):
+        task_ids = []
+        for t in self.tasks:
+            task_ids.append(t.id)
+        if p_task.id not in task_ids:
+            self.tasks.append(p_task)
 
 

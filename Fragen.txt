@@ -1,4 +1,9 @@
 Warum hat p06 zwei Fragen mehr in Demographics als alle anderen? 
 
-
 F = Formula, V = Video, S = Static -> Kürzel-Interpretation / Gruppen der Teilnehmenden
+
+"x" in Tabelle heißt das gleiche wie kein Eintrag, nämlich 0 ?
+
+
+welche statistische Anaylse:
+    Spannend wäre vor allem, ob die beobachteten Unterschiede von DOU und TTU zwischen den drei Darstellungsformen statistisch signifikant sind.
