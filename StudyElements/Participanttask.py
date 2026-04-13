@@ -24,13 +24,12 @@ class ParticipantTask(Task):
 
         minutes, seconds, milliseconds = value.split(":")
         if milliseconds != "00":
-            print("Milliseconds / whatever:", milliseconds)
+           raise Exception("milliseconds or whatever")
         try:
             value = time(
                 hour=0,
                 minute=int(minutes),
-                second=int(seconds),
-                # microsecond=int(milliseconds) * 1000  # convert ms → µs
+                second=int(seconds)
             )
         except Exception as e:
             print(value, flush=True)

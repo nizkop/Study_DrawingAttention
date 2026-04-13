@@ -1,5 +1,7 @@
 *.idea/
 *.idea/**
+venv/
+venv/**
 *.xlsx
 DATA/**
 __pycache__/
