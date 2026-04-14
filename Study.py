@@ -97,7 +97,7 @@ for p in participants:
         p.create_task_files(task=t)
 
 print("\n\n")
-for category in ["TTU", "DOU"]:
+for category in ["DOU", "TTU"]:
     display_category(category=category, participants=participants, task_ids=[i for i in range(1,18)])
     results = statistics_category(category=category, participants=participants, task_ids=[i for i in range(1,18)])
     print(results)

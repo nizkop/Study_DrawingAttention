@@ -5,6 +5,9 @@ DATA_INPUT = "JSON"
 
 alpha = 0.05
 
+AGGREGATION_FUNCTION = "median"
+# AGGREGATION_FUNCTION = "mean"
+
 
 COLORS = {
     "DEFAULT": "gray",
@@ -15,5 +18,4 @@ COLORS = {
 
     "median": "orange",
     "mean": "red",
-
 }

@@ -16,6 +16,10 @@ def post_hoc_within(data_tbl: pd.DataFrame,
     Pairwise, dependent (paired) t‑tests for a within‑subjects design.
     Returns a significance matrix (True = no significant difference),
     the list of group names and the number of groups (n).
+
+    :return sig_matrix: boolean matrix (True = no significant difference)
+    :return groups: list of subject IDs (group names)
+    :return n: number of groups (number of subjects)
     """
     if data_tbl is None or data_tbl.empty:
         return None, None, None
@@ -24,15 +28,16 @@ def post_hoc_within(data_tbl: pd.DataFrame,
 
     p_matrix = np.ones((n_groups, n_groups))
 
-    # für jedes Paar (i,j) gepaarten t‑Test durchführen:
+    # for each pair (i,j) execute a paired t‑test:
     for (i, g1), (j, g2) in itertools.combinations(enumerate(groups), 2):
         d1 = data_tbl.loc[data_tbl[group_col] == g1].set_index(subject_col)[value_col]
         d2 = data_tbl.loc[data_tbl[group_col] == g2].set_index(subject_col)[value_col]
         common = d1.index.intersection(d2.index)
         d1, d2 = d1.loc[common], d2.loc[common]
 
-        # gepaarter t‑Test
+        # paired t‑test:
         tstat, p = stats.ttest_rel(d1, d2)
+        # tstat, p = stats.wilcoxon(d1, d2)
         p_matrix[i, j] = p
         p_matrix[j, i] = p
 
