@@ -10,9 +10,10 @@ from HelperFunctions.get_color import get_color
 
 def basic_boxplot(df:pd.DataFrame, y_column:str, color_label:str=None,
                   y_label:str = "", x_label:str = ""):
+    df = df.sort_values("id")
 
     grouped_info = df.groupby('id')[y_column].apply(list).to_dict()
-    x_values = [i.replace("task_", "") for i in grouped_info.keys()]
+    x_values = [int(i) for i in grouped_info.keys()]
     y_values = grouped_info.values()
 
     # --- Plot Box Plot ---

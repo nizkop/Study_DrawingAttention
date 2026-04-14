@@ -4,16 +4,5 @@ F = Formula, V = Video, S = Static -> Kürzel-Interpretation / Gruppen der Teiln
 
 "x" in Tabelle heißt das gleiche wie kein Eintrag, nämlich 0 ?
 
-
-manche Teilnehmer haben ja deutlich länger gebraucht und ggf. auch Aufgaben nicht fertig gestellt -> werden diese Daten mit eingerechnet in TTU, oder nicht?
-Bisher nehme ich DOU > 0 als Vorraussetzung an, aber es könnte ja auch jemand nach einem kleinen Verständnispunkt noch lange weiter überlegt haben, ohne dass er/sie noch mehr Erkenntnisse hatte.
-Wäre die TTU dann nicht falsch?
-
-
-Zeitangabe per minutes, seconds, milliseconds = value.split(":") ?
-
-
-aggregate funciton for AnovaRM = ? -> mean / median / ?
-
 welche statistische Anaylse:
     Spannend wäre vor allem, ob die beobachteten Unterschiede von DOU und TTU zwischen den drei Darstellungsformen statistisch signifikant sind.

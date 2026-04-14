@@ -11,7 +11,7 @@ from HelperFunctions.statistics.within_subjects_anova import within_subjects_ano
 
 def display_TTU(task_ids: list[int], participants: list[Participant]):
     df = get_data(participants=participants, task_ids=task_ids)
-
+    df["id"] = df["id"].apply(lambda x: x.replace("task_", "")).astype(int)
 
     fig, ax, legend = basic_boxplot(df=df, color_label="total", y_column="TTU",
                   y_label="Time for Understanding [s]", x_label="Task ID [ ]")

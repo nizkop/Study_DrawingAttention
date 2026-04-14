@@ -13,6 +13,7 @@ from compact_letter_display import compact_letter_display
 
 def display_DOU(task_ids: list[int], participants: list[Participant]):
     df = get_data(participants=participants, task_ids=task_ids)
+    df["id"] = df["id"].apply(lambda x: x.replace("task_", "")).astype(int)
 
     fig, ax, legend = basic_boxplot(df=df, y_column="DOU", color_label="total",
                             y_label="Degree of Understanding [s]", x_label="Task ID [ ]")

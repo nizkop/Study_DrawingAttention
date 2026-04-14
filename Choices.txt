@@ -1,0 +1,13 @@
+
+
+median to group for between-subjects-ANOVA:
+    - mean value would be more common (even suggested aggregation function in documentation of AnovaRM: https://www.statsmodels.org/stable/generated/statsmodels.stats.anova.AnovaRM.html)
+    - s. box plots: mean value is sometimes even outside the whisker-range (i.e. outside [Q2 - 1.5 IQR, Q3 + 1.5 * IQR])
+    - median more robust considering highly diffuse data ("outliers" included)
+
+
+
+TTU: "time of understanding"
+    = time spend on understanding, no matter how much is understood in the end (this is covered by Degree-Of-Understanding!)
+    -> no data excluded
+    -> statistical tests with as much data as available (but then, median instead of mean to account for the included values that might as well be outliers)

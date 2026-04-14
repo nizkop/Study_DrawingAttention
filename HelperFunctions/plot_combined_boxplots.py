@@ -8,8 +8,10 @@ def plot_combined_boxplots(df:pd.DataFrame, y_column:str, y_label: str, x_label:
     """
     Overview of 4 Boxplots: total data, Group F, Group S, Group V
     """
+    df = df.sort_values("id")
+
     grouped_info_total = df.groupby('id')[y_column].apply(list).to_dict()
-    x_values_total = [i.replace("task_", "") for i in grouped_info_total.keys()]
+    x_values_total = [int(i) for i in grouped_info_total.keys()]
 
     group_info_dict = {}
     for group, group_df in df.groupby("group", sort=False):
@@ -31,7 +33,7 @@ def plot_combined_boxplots(df:pd.DataFrame, y_column:str, y_label: str, x_label:
         if i >= 3:
             break
         info = group_info_dict[group]
-        x_values = [i.replace("task_", "") for i in info.keys()]
+        x_values = [i for i in info.keys()]
         box_plot_core(ax=axes[i + 1], x_values=x_values, y_values=info.values(), color_label=group)
         axes[i + 1].set_title(f"Group \"{group}\"", fontweight='bold')
         axes[i + 1].set_xlabel(x_label)
