@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 
-from HelperFunctions.basic_boxplot import box_plot_core, add_legend
+from HelperFunctions.diagrams.basic_boxplot import box_plot_core, add_legend
 
 
 def plot_combined_boxplots(df:pd.DataFrame, y_column:str, y_label: str, x_label: str):

@@ -1,13 +1,12 @@
-import pandas as pd
-
+from HelperFunctions.diagrams.comparision_boxplot_across_groups import comparision_boxplot_across_groups
 from HelperFunctions.get_data import get_data
 from HelperFunctions.save_figures import save_figures
 from HelperFunctions.statistics.between_subjects_anova import between_subjects_anova
 from HelperFunctions.statistics.post_hoc_within import post_hoc_within
 from HelperFunctions.statistics.within_subjects_anova import within_subjects_anova
-from HelperFunctions.plot_combined_boxplots import plot_combined_boxplots
+from HelperFunctions.diagrams.plot_combined_boxplots import plot_combined_boxplots
 from StudyElements.Participant import Participant
-from HelperFunctions.basic_boxplot import basic_boxplot
+from HelperFunctions.diagrams.basic_boxplot import basic_boxplot
 from compact_letter_display import compact_letter_display
 
 
@@ -41,3 +40,6 @@ def display_DOU(task_ids: list[int], participants: list[Participant]):
 
     fig, axes, legend = plot_combined_boxplots(df=df, y_column="DOU", y_label="Degree of Understanding [ ]", x_label="Task ID [ ]")
     save_figures(fig=fig, axes=axes, title="DOU_overview_all_boxplots", bbox_extra_artists=[legend])
+
+    fig, ax, legend = comparision_boxplot_across_groups(df=df, y_column="DOU", y_label="Degree of Understanding [ ]", x_label="Task ID [ ]")
+    save_figures(fig=fig, axes=ax, title="DOU_comparision_boxplot_across_groups", bbox_extra_artists=[legend])
