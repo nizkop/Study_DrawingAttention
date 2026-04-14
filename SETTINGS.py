@@ -12,4 +12,8 @@ COLORS = {
     "Static sketch construction": "blue",
     "Formula construction": "green",
     "Dynamic sketch construction": "pink",
+
+    "median": "orange",
+    "mean": "red",
+
 }
