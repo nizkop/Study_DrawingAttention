@@ -12,7 +12,7 @@ def within_subjects_anova(df, potential_difference_determining_column:str, subje
 
     df_agg = (
         df.groupby([subject_col, potential_difference_determining_column], as_index=False)[value_col]
-          .median()#TODO soll das so!?
+          .mean()#TODO soll das so!?
     )
     try:
         aov = AnovaRM(df_agg, depvar=value_col, subject=subject_col, within=[potential_difference_determining_column])

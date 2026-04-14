@@ -81,6 +81,7 @@ class ParticipantTask(Task):
             self.time_to_understand = None
         if len(self.notes) > 0 and self.notes != "None":
             if "skipped" in self.notes.lower():
+                print(self.notes, "skipped")
                 self.skipped = True
             # if self.notes in [
             #                  'Participant was not getting it so I told him that where the green box is, the formula/answer goes',
