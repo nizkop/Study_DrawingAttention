@@ -1,0 +1,22 @@
+
+DIFFERENCES IN [1mDOU PER TASK[0m:
+	→ Significant difference between groups (p = 1.831e-06, eta = 0.1)
+		[1m→ Median Values of all Groups:[0m
+		  - Task 1 → 1.000
+		  - Task 2 → 1.000
+		  - Task 3 → 1.000
+		  - Task 4 → 1.000
+		  - Task 5 → 1.000
+		  - Task 6 → 0.800
+		  - Task 7 → 0.889
+		  - Task 8 → 1.000
+		  - Task 9 → 1.000
+		  - Task 10 → 0.875
+		  - Task 11 → 1.000
+		  - Task 12 → 1.000
+		  - Task 13 → 1.000
+		  - Task 14 → 1.000
+		  - Task 15 → 1.000
+		  - Task 16 → 0.875
+		  - Task 17 → 1.000
+	Compact-Letter-Display:  {'Task 1': 'bcd', 'Task 2': 'cd', 'Task 3': 'cd', 'Task 4': 'd', 'Task 5': 'abcd', 'Task 6': 'abe', 'Task 7': 'ae', 'Task 8': 'abcde', 'Task 9': 'abcde', 'Task 10': 'abce', 'Task 11': 'd', 'Task 12': 'd', 'Task 13': 'cd', 'Task 14': 'abcd', 'Task 15': 'abcde', 'Task 16': 'e', 'Task 17': 'abcde'}

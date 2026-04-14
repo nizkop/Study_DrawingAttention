@@ -1,0 +1,44 @@
+Evaluating structural aspects of tasks:
+
+DIFFERENCES IN DOU, COMP (included tasks = 13.0):
+	→ No significant difference (p = 0.7329, eta = 0.02556))
+DIFFERENCES IN DOU, COND (included tasks = 4.0):
+	→ No significant difference (p = 0.3948, eta = 0.2664))
+DIFFERENCES IN DOU, LOOK (included tasks = 3.0):
+	→ No significant difference (p = 0.5653, eta = 0.2481))
+DIFFERENCES IN DOU, CELL (included tasks = 9.0):
+	→ No significant difference (p = 0.3006, eta = 0.1395))
+DIFFERENCES IN DOU, RANGE (included tasks = 9.0):
+	→ Significant difference in DOU (p = 0.03822, eta = 0.3351))
+		→ Median Values of all Groups:
+		  - Dynamic sketch construction → 1.000 s
+		  - Formula construction → 1.000 s
+		  - Static sketch construction → 0.889 s
+	Compact-Letter-Display: {'Dynamic sketch construction': 'a', 'Formula construction': 'a', 'Static sketch construction': 'a'}
+
+DIFFERENCES IN DOU, LIT (included tasks = 4.0):
+	→ No significant difference (p = 0.4052, eta = 0.26))
+DIFFERENCES IN DOU, FUNC (included tasks = 7.0):
+	→ No significant difference (p = 0.5985, eta = 0.08199))
+DIFFERENCES IN DOU, VAL (included tasks = 14.0):
+	→ No significant difference (p = 0.5675, eta = 0.04264))
+DIFFERENCES IN DOU, BATCH (included tasks = 1.0):
+	→ No significant difference (p = nan, eta = nan))
+DIFFERENCES IN DOU, LIST (included tasks = 2.0):
+	→ No significant difference (p = 0.5, eta = 0.5))
+DIFFERENCES IN DOU, BACK (included tasks = 12.0):
+	→ No significant difference (p = 0.1015, eta = 0.1877))
+DIFFERENCES IN DOU, FORWARD (included tasks = 7.0):
+	→ No significant difference (p = 0.5094, eta = 0.1063))
+DIFFERENCES IN DOU, ON (included tasks = 14.0):
+	→ Significant difference in DOU (p = 0.04103, eta = 0.2178))
+		→ Median Values of all Groups:
+		  - Dynamic sketch construction → 1.000 s
+		  - Formula construction → 1.000 s
+		  - Static sketch construction → 1.000 s
+	Compact-Letter-Display: {'Dynamic sketch construction': 'a', 'Formula construction': 'a', 'Static sketch construction': 'a'}
+
+DIFFERENCES IN DOU, OFF (included tasks = 3.0):
+	→ No significant difference (p = 0.4444, eta = 0.3333))
+DIFFERENCES IN DOU, CROSS (included tasks = 4.0):
+	→ No significant difference (p = 1, eta = 0))

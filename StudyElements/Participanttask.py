@@ -11,6 +11,7 @@ class ParticipantTask(Task):
                          expected_operations=task.task_expected_operations, result_type=task.task_result_type,
                          formula=task.task_formula
                          )
+        self.structural_aspects = task.structural_aspects
         self.p_id = p_id
 
         self.id = f"{self.p_id}-{self.task_number}"

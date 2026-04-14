@@ -1,0 +1,22 @@
+
+DIFFERENCES IN [1mTTU PER TASK[0m:
+	→ Significant difference between groups (p = 0.03145, eta = 0.1)
+		[1m→ Median Values of all Groups:[0m
+		  - Task 1 → 26
+		  - Task 2 → 18
+		  - Task 3 → 21
+		  - Task 4 → 23
+		  - Task 5 → 25
+		  - Task 6 → 33
+		  - Task 7 → 85
+		  - Task 8 → 30
+		  - Task 9 → 51
+		  - Task 10 → 40
+		  - Task 11 → 29
+		  - Task 12 → 46
+		  - Task 13 → 39
+		  - Task 14 → 53
+		  - Task 15 → 91
+		  - Task 16 → 46
+		  - Task 17 → 48
+	Compact-Letter-Display:  {'Task 1': 'bdef', 'Task 2': 'f', 'Task 3': 'ef', 'Task 4': 'bef', 'Task 5': 'bcdef', 'Task 6': 'abcdef', 'Task 7': 'gh', 'Task 8': 'abcdef', 'Task 9': 'acg', 'Task 10': 'abcdeg', 'Task 11': 'bcde', 'Task 12': 'abcdg', 'Task 13': 'abcdeg', 'Task 14': 'agh', 'Task 15': 'h', 'Task 16': 'acdgh', 'Task 17': 'acdgh'}

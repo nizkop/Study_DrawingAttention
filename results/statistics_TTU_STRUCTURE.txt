@@ -1,0 +1,34 @@
+Evaluating structural aspects of tasks:
+
+DIFFERENCES IN TTU, COMP (included tasks = 13.0):
+	→ Significant difference in TTU (p = 0.01077, eta = 0.3145))
+		→ Median Values of all Groups:
+		  - Dynamic sketch construction → 34 s
+		  - Formula construction → 36 s
+		  - Static sketch construction → 26 s
+	Compact-Letter-Display: {'Dynamic sketch construction': 'ab', 'Formula construction': 'a', 'Static sketch construction': 'b'}
+
+DIFFERENCES IN TTU, LIT (included tasks = 4.0):
+	→ Significant difference in TTU (p = 0.01361, eta = 0.7613))
+		→ Median Values of all Groups:
+		  - Dynamic sketch construction → 40 s
+		  - Formula construction → 45 s
+		  - Static sketch construction → 30 s
+	Compact-Letter-Display: {'Dynamic sketch construction': 'ab', 'Formula construction': 'a', 'Static sketch construction': 'b'}
+
+DIFFERENCES IN TTU, VAL (included tasks = 14.0):
+	→ Significant difference in TTU (p = 0.02763, eta = 0.2412))
+		→ Median Values of all Groups:
+		  - Dynamic sketch construction → 35 s
+		  - Formula construction → 36 s
+		  - Static sketch construction → 28 s
+	Compact-Letter-Display: {'Dynamic sketch construction': 'ab', 'Formula construction': 'a', 'Static sketch construction': 'b'}
+
+DIFFERENCES IN TTU, ON (included tasks = 14.0):
+	→ Significant difference in TTU (p = 0.008986, eta = 0.304))
+		→ Median Values of all Groups:
+		  - Dynamic sketch construction → 35 s
+		  - Formula construction → 36 s
+		  - Static sketch construction → 26 s
+	Compact-Letter-Display: {'Dynamic sketch construction': 'ab', 'Formula construction': 'a', 'Static sketch construction': 'b'}
+

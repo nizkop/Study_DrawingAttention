@@ -1,0 +1,35 @@
+Evaluating structural aspects of tasks in groups:
+
+DIFFERENCES IN DOU for group COMP-COND-LOOK
+	(operation type) (included tasks = 1.0:
+	→ No significant difference (p = nan, eta = nan))
+DIFFERENCES IN DOU for group COND-LOOK
+	(operation type) (included tasks = 1.0:
+	→ No significant difference (p = nan, eta = nan))
+DIFFERENCES IN DOU for group CELL-LIT
+	(operand type) (included tasks = 1.0:
+	→ No significant difference (p = nan, eta = nan))
+DIFFERENCES IN DOU for group FUNC-RANGE
+	(operand type) (included tasks = 5.0:
+	→ No significant difference (p = 0.0997, eta = 0.4381))
+DIFFERENCES IN DOU for group LIT-RANGE
+	(operand type) (included tasks = 1.0:
+	→ No significant difference (p = nan, eta = nan))
+DIFFERENCES IN DOU for group CELL-FUNC-LIT
+	(operand type) (included tasks = 2.0:
+	→ No significant difference (p = 0.3722, eta = 0.6278))
+DIFFERENCES IN DOU for group CELL-RANGE
+	(operand type) (included tasks = 1.0:
+	→ No significant difference (p = nan, eta = nan))
+DIFFERENCES IN DOU for group BACK-FORWARD
+	(Ref. direction) (included tasks = 2.0:
+	→ No significant difference (p = 1, eta = -0.2083))
+DIFFERENCES IN DOU for group OFF-ON
+	(Ref. dispersion) (included tasks = 1.0:
+	→ No significant difference (p = nan, eta = nan))
+DIFFERENCES IN DOU for group CROSS-ON
+	(Ref. dispersion) (included tasks = 1.0:
+	→ No significant difference (p = nan, eta = nan))
+DIFFERENCES IN DOU for group CROSS-OFF-ON
+	(Ref. dispersion) (included tasks = 1.0:
+	→ No significant difference (p = nan, eta = nan))

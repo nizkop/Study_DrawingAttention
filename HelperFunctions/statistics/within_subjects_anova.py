@@ -37,7 +37,7 @@ def within_subjects_anova(df, potential_difference_determining_column:str, subje
             # Tendency by Median of Group:
             medians = df.groupby(potential_difference_determining_column)[value_col].median()
             sorted_medians = medians.sort_index()# sorted by group name
-            result += "\n\t\t\u001b[1m→ Median Values of all Groups:\u001b[0m"
+            result += "\n\t\t→ Median Values of all Groups:"
             for group_name, median_val in sorted_medians.items():
                 if value_col == "TTU":
                     precision = 0# only int precision TUU (s)
