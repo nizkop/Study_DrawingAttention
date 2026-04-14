@@ -16,7 +16,7 @@ def display_DOU(task_ids: list[int], participants: list[Participant]):
     df["id"] = df["id"].apply(lambda x: x.replace("task_", "")).astype(int)
 
     fig, ax, legend = basic_boxplot(df=df, y_column="DOU", color_label="total",
-                            y_label="Degree of Understanding [s]", x_label="Task ID [ ]")
+                            y_label="Degree of Understanding [ ]", x_label="Task ID [ ]")
     save_figures(title="DOU_total", fig=fig, axes=ax, bbox_extra_artists=[legend])
 
 
@@ -36,8 +36,8 @@ def display_DOU(task_ids: list[int], participants: list[Participant]):
 
     for group, participants_df in df.groupby("group", sort=False):
         fig, ax, legend = basic_boxplot(df=participants_df,color_label=group,y_column="DOU",
-                                y_label="Degree of Understanding [s]", x_label="Task ID [ ]")
+                                y_label="Degree of Understanding [ ]", x_label="Task ID [ ]")
         save_figures(title=f"DOU_{group.replace(' ','')}", fig=fig, axes=ax, bbox_extra_artists=[legend])
 
-    fig, axes, legend = plot_combined_boxplots(df=df, y_column="DOU", y_label="Degree of Understanding [s]", x_label="Task ID [ ]")
+    fig, axes, legend = plot_combined_boxplots(df=df, y_column="DOU", y_label="Degree of Understanding [ ]", x_label="Task ID [ ]")
     save_figures(fig=fig, axes=axes, title="DOU_overview_all_boxplots", bbox_extra_artists=[legend])

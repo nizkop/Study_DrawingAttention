@@ -29,5 +29,5 @@ def display_TTU(task_ids: list[int], participants: list[Participant]):
                   y_label="Time for Understanding [s]", x_label="Task ID [ ]")
         save_figures(title=f"TTU_{group.replace(' ','')}", fig=fig, axes=ax, bbox_extra_artists=[legend])
 
-    fig, axes, legend = plot_combined_boxplots(df=df, y_column="TTU", y_label="Degree of Understanding [s]", x_label="Task ID [ ]")
+    fig, axes, legend = plot_combined_boxplots(df=df, y_column="TTU", y_label="Time for Understanding [s]", x_label="Task ID [ ]")
     save_figures(fig=fig, axes=axes, title="TTU_overview_all_boxplots", bbox_extra_artists=[legend])
