@@ -5,14 +5,14 @@ from SETTINGS import alpha
 
 
 def within_subjects_anova(df, potential_difference_determining_column:str, subject_col="id", value_col="measured_value",
-                          try_again=False, print_info:bool=True):
+                          print_info:bool=True):
     if df.empty:
         print("⚠️ DataFrame ist leer – keine ANOVA möglich.")
         return None, None
 
     df_agg = (
         df.groupby([subject_col, potential_difference_determining_column], as_index=False)[value_col]
-          .mean()#TODO soll das so!?
+          .median()
     )
     try:
         aov = AnovaRM(df_agg, depvar=value_col, subject=subject_col, within=[potential_difference_determining_column])
@@ -26,31 +26,17 @@ def within_subjects_anova(df, potential_difference_determining_column:str, subje
 
         p_val = res.anova_table["Pr > F"].iloc[0]
         if p_val < alpha:
-            result = f"→ signifikanter Unterschied bzgl {value_col} (p = {p_val:.4g}, eta = {partial_eta_squared:.4g}))"
-            # Tendency:
-            # Medianberechnung
+            result = f"→ Significant difference in {value_col} (p = {p_val:.4g}, eta = {partial_eta_squared:.4g}))"
+            # Tendency by Median of Group:
             medians = df.groupby(potential_difference_determining_column)[value_col].median()
-            sorted_medians = medians.sort_values()
-            result += "\n\t\u001b[1m→ Median Werte aller Gruppen:\u001b[0m"
+            sorted_medians = medians.sort_index()# sorted by group name
+            result += "\n\t\t\u001b[1m→ Median Values of all Groups:\u001b[0m"
             for group_name, median_val in sorted_medians.items():
-                result += f"\n\t  {group_name:10} → {median_val:.3f} s"
+                result += f"\n\t\t  - {group_name:10} → {median_val:.0f} s"# only int precision for DOU and TUU (s) anyway
         else:
-            result = f"→ kein signifikanter Unterschied (p = {p_val:.4g}, eta = {partial_eta_squared:.4g}))"
+            result = f"→ No significant difference (p = {p_val:.4g}, eta = {partial_eta_squared:.4g}))"
         return df_agg, result
     except ValueError:
         # Data is unbalanced
         print("! Task-ID is missing sketch/voice data point -> shortening data:", end="\t", flush=True)
-        if try_again:
-            return None, None
-        # Nur IDs behalten, die alle Modalitäten haben:
-        complete_ids = (
-            df.groupby(subject_col)[potential_difference_determining_column].nunique()  # wie viele Modalitäten je ID?
-            .eq(df[potential_difference_determining_column].nunique())  # gleich der Gesamtzahl?
-        )
-        df_balanced = df[df[subject_col].isin(complete_ids[complete_ids].index)]
-
-        #Info: welche IDs bleiben nach der Filterung übrig
-        remaining_ids = sorted(df_balanced[subject_col].unique())
-        print(f"→ {len(remaining_ids)} complete tasks remaining: {remaining_ids}")
-        return within_subjects_anova(df=df_balanced, try_again=True, print_info=print_info,
-                                     potential_difference_determining_column=potential_difference_determining_column)
+        return

@@ -10,7 +10,7 @@ def comparision_boxplot_across_groups(df: pd.DataFrame, y_column: str, y_label: 
     df = df.sort_values("id")
 
     box_width = 0.2
-    markersize = 3
+    markersize = 4
     offsets = {
         "total": -1.5 * box_width,
         "Formula construction": -0.5 * box_width,

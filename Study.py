@@ -1,8 +1,9 @@
 from StudyElements.Participant import Participant
 from StudyElements.STUDYGROUP import STUDYGROUP
 from StudyElements.Task import Task, RESULTTYPE
-from HelperFunctions.display_DOU import display_DOU
-from HelperFunctions.display_TTU import display_TTU
+from HelperFunctions.statistics_category import statistics_category
+from HelperFunctions.display_category import display_category
+
 
 p01 = Participant(id="p01", studygroup=STUDYGROUP.F)
 p31 = Participant(id="p31", studygroup=STUDYGROUP.F)
@@ -95,7 +96,8 @@ for p in participants:
     for t in tasks:
         p.create_task_files(task=t)
 
-
-
-display_DOU(participants=participants, task_ids=[i for i in range(1,18)])
-display_TTU(participants=participants, task_ids=[i for i in range(1,18)])
+print("\n\n")
+for category in ["TTU", "DOU"]:
+    display_category(category=category, participants=participants, task_ids=[i for i in range(1,18)])
+    results = statistics_category(category=category, participants=participants, task_ids=[i for i in range(1,18)])
+    print(results)
